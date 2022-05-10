@@ -14,5 +14,16 @@ router.get('/', async (req,res) =>{
     }
 })
 
+router.get('/:id', async (req,res) =>{
+    try{
+        const bookData = await Book.findByPk(req.params.id,{
+            include: [{model:Review }]
+        })
+        const bookId = bookData.get({plain:true});
+        res.status(200).json(bookId);
+    }catch(err){
+        res.status(400).json(err)
+    }
+})
 
 module.exports = router;
