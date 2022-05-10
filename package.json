@@ -1,9 +1,32 @@
 {
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.3",
+    "dotenv": "^16.0.0",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.5",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
-  }
+    "sequelize": "^6.19.0",
+    "node-fetch": "^2.6.7"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "book-spot",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateonav98/book-spot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateonav98/book-spot/issues"
+  },
+  "homepage": "https://github.com/mateonav98/book-spot#readme"
 }
