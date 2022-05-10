@@ -14,6 +14,7 @@ Book.init(
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "Default"
     },
     author: {
         type: DataTypes.STRING,
@@ -22,13 +23,6 @@ Book.init(
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    review_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'review',
-          key: 'id',
-        },
     },
     user_id: {
       type: DataTypes.INTEGER,
