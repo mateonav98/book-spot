@@ -26,4 +26,23 @@ router.get('/:id', async (req,res) =>{
     }
 })
 
+router.post('/', async (req,res) =>{
+    //example of test
+    // {
+    //     "title":"new book",
+    //     "author": "richard",
+    //     "description": "good book",
+    //     "user_id": 1 
+    // }
+    try{
+        const createBook = await Book.create({
+            ...req.body,
+            //grabs user id number
+            user_id: req.session.user_id,
+        });
+        res.status(200).json(createBook)
+    }catch(err){
+        res.status(400).json(err);
+    }
+})
 module.exports = router;
