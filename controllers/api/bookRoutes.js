@@ -45,4 +45,28 @@ router.post('/', async (req,res) =>{
         res.status(400).json(err);
     }
 })
+
+router.put('/:id', async (req,res) => {
+    //comment out user_id to test
+    // {
+    //     "id":"4",
+    //     "title":"new book",
+    //     "author": "new author",
+    //     "description": "very good book",
+    //     "user_id":1
+    // }
+    try {
+        const updateBook = Book.update(req.body, {
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            }
+        });
+
+        res.status(200).json(updateBook)
+    }catch(err) {
+        res.status(400).json(err);
+    }
+});
+
 module.exports = router;
