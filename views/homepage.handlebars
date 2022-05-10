@@ -1,27 +1,26 @@
-    <div class="container-fluid col-12">
+    <div class="container-fluid col-12 text-center">
         <div id="back-z" class="row position-absolute">
             <div class="container-fluid col-4">
-            <img class="img-fluid w-100" src="https://th.bing.com/th/id/OIP.HTewrT_rKkscjmqJryQsmAHaLQ?pid=ImgDet&rs=1" alt="a little life">
+            <img id="custom-img" class="img-fluid w-100" src="https://th.bing.com/th/id/OIP.HTewrT_rKkscjmqJryQsmAHaLQ?pid=ImgDet&rs=1" alt="a little life">
             </div>
             <div class="container-fluid col-4">
-            <img class="img-fluid w-100" src="https://www.oberlo.com/media/1603897585-image12-1.jpg?fm=webp&w=1824&fit=max" alt="">
+            <img id="custom-img" class="img-fluid w-100" src="https://www.oberlo.com/media/1603897585-image12-1.jpg?fm=webp&w=1824&fit=max" alt="">
             </div>
             <div class="container-fluid col-4">
-            <img class="img-fluid w-100" src="https://th.bing.com/th/id/R.3e786fd5a6cbb35d2a7d0b7ff4a548a9?rik=rGSdECR1slVefA&riu=http%3a%2f%2funiverse.byu.edu%2fwp-content%2fuploads%2f2015%2f01%2fHP4cover.jpg&ehk=bpjeyWyCs9NzHWOtrp%2bvFhMgtPo6MWRgqKlwX3ksxXY%3d&risl=&pid=ImgRaw&r=0" alt="harry potter">
+            <img id="custom-img" class="img-fluid w-100" src="https://th.bing.com/th/id/R.3e786fd5a6cbb35d2a7d0b7ff4a548a9?rik=rGSdECR1slVefA&riu=http%3a%2f%2funiverse.byu.edu%2fwp-content%2fuploads%2f2015%2f01%2fHP4cover.jpg&ehk=bpjeyWyCs9NzHWOtrp%2bvFhMgtPo6MWRgqKlwX3ksxXY%3d&risl=&pid=ImgRaw&r=0" alt="harry potter">
             </div>
         </div>
-        <section id="front-z" class="postion">
-            <img src="./public/images/book-logo.png" alt="BS logo" width="100" height="100">
-            <h1>Book Spot</h1>
+        <section id="front-z" class="container-fluid position-absolute mx-auto align-items-center">
+            <img src="/images/book-logo.png" alt="BS logo" width="150" height="150">
+            <h1 class="">Book Spot</h1>
             <div class="container-fluid col-10">
-            <form class="form-inline">
+            <form id="searchForm" class="form">
                 <div class="form-group mb-6 col-12">
-                  <label for="inputPassword2" class="sr-only">Search</label>
-                  <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-                <button type="submit" class="btn btn-primary">🔎</button>
+                  <label for="inputsearch" class="sr-only">Search</label>
+                  <input type="search" class="form-control mb-3" id="searchText" placeholder="search: title, genre, author">
+                <button id="bg-custom searchbtn" type="submit" class="btn">Search 🔎</button>
             </div>
             </form>
             </div>
         </section>
     </div>
-<script src=""></script>
