@@ -12,8 +12,12 @@ User.hasMany(Review, {
     onDelete: 'CASCADE'
 })
 
-Book.belongsTo(User, {
-    foreignKey: 'user_id'
+Book.belongsToMany(User, {
+    through: {
+        model: Review,
+        unique: false
+    },
+    as: 'book_user'
 });
 
 Book.hasMany(Review, {
