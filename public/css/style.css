@@ -45,3 +45,35 @@
 .card-signup h1, .card-login h1{
     text-align: center;
 }
+
+.scroll {
+    overflow:scroll;
+}
+
+@media (max-width:575px) {
+    #customHeight {
+        height: 200px;
+    }
+}
+
+@media (min-width: 576px) { 
+    #customHeight {
+        height: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    #customHeight {
+        height: 300px;
+    }
+}
+
+@media (min-width: 992px) {
+    #customHeight {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1200px) {#customHeight {
+    height: 500px;
+}}
