@@ -1,11 +1,11 @@
 {{#if logged_in}}
-{{savedBooks as |savedBook| }}
+{{Books as |book| }}
 <div>
     <h1>My saved books:</h1>
     <div class="container col-12 d-flex">
         <div class="col-3 container">
-            <p>{{savedBook.title}}</p>
-            <img id="{{savedBook.id}}" class="img-fluid w-100 mb-3" src="" alt="">
+            <p>{{book.title}}</p>
+            <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="" alt="">
             <button>Unsave</button>
         </div>
     </div>
