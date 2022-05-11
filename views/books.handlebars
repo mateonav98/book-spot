@@ -3,7 +3,7 @@
     {{#if book.volumeInfo.imageLinks}}
     <div id="customHeight" class="container-fluid col-12 d-flex">
         <div class="container-fluid col-3 mb-3">
-            <img data-link="{{book.selfLink}}" class="img-fluid w-100 h-100 border rounded" src="{{book.volumeInfo.imageLinks.thumbnail}}">
+            <img data-link="{{book.selfLink}}" class="img-fluid w-100 h-100 border rounded" src="{{book.volumeInfo.imageLinks.thumbnail}}" id="{{book.id}}">
         </div>
         <div class="container col-9 border mb-3 rounded bg-light scroll">
             <p>Title: {{book.volumeInfo.title}}</p>
@@ -20,3 +20,5 @@
     {{/if}}
     {{/each}}
     </div>
+
+    <script src="/js/bookresults.js"></script>

@@ -27,6 +27,20 @@ router.get('/', async (req,res) =>{
     }
 })
 
+
+router.get('/result', async (req,res) =>{
+    try{
+        const bookid = req.query.bookid
+        const response = await fetch('https://www.googleapis.com/books/v1/volumes/' + bookid); 
+        const data = await response.json();
+        res.render('single-book', {book: data})
+    }catch(err){
+        console.error('got error');
+        console.error(err);
+        res.status(400).json(err)
+    }
+})
+
 router.get('/:id', async (req,res) =>{
     try{
         const bookData = await Book.findByPk(req.params.id,{
@@ -38,6 +52,8 @@ router.get('/:id', async (req,res) =>{
         res.status(400).json(err)
     }
 })
+
+
 
 router.post('/', async (req,res) =>{
     //example of test

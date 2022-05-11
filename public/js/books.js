@@ -56,7 +56,6 @@ const getData = (event) => {
     // .then(function (data) {
     //   console.log(data);
     // });
-
     location.href = '/api/books?searchTerm=' + search;
 
 };

@@ -1,14 +1,13 @@
-{{data.volumeInfo as |info| }}
 <div class="container col-12 d-flex">
     <div class="col-5 container">
-        <img id="custom-img" class="img-fluid w-100 mb-3" src="https://th.bing.com/th/id/R.3e786fd5a6cbb35d2a7d0b7ff4a548a9?rik=rGSdECR1slVefA&riu=http%3a%2f%2funiverse.byu.edu%2fwp-content%2fuploads%2f2015%2f01%2fHP4cover.jpg&ehk=bpjeyWyCs9NzHWOtrp%2bvFhMgtPo6MWRgqKlwX3ksxXY%3d&risl=&pid=ImgRaw&r=0" alt="harry potter">
+        <img id="custom-img" class="img-fluid w-100 mb-3" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="harry potter">
         <button>Save Book</button>
     </div>
     <div class="col-7 container">
-        <p>{{info.title}}</p>
-        <p>{{info.authors}}</p>
-        <p>{{info.description}}</p>
-        <p>{{info.publishedDate}}</p>
+        <p>{{book.volumeInfo.title}}</p>
+        <p>{{book.volumeInfo.authors}}</p>
+        <p>{{book.volumeInfo.description}}</p>
+        <p>{{book.volumeInfo.publishedDate}}</p>
         <form>
             <div class="mb-3">
                 <label for="review" class="form-label">Review</label>
