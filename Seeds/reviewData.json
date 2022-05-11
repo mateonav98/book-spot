@@ -1,19 +1,19 @@
 [
     {
         "review": "review1 for book1",
-        "created_date": "4/1/2022",
+        "created_date": "2022-04-01",
         "user_id": 1,
         "book_id": 1
     },
     {
         "review": "review2 for book2",
-        "created_date": "4/2/2022",
+        "created_date": "2022-04-02",
         "user_id": 2,
         "book_id": 2
     }, 
     {
         "review": "review3 for book3",
-        "created_date": "4/3/2022",
+        "created_date": "2022-04-03",
         "user_id": 3,
         "book_id": 3
     }
