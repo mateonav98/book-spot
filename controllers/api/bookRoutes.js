@@ -69,4 +69,22 @@ router.put('/:id', async (req,res) => {
     }
 });
 
+
+router.delete('/:id', async (req,res) =>{
+    try{
+        const bookDel = await Book.destroy({
+            where: {
+                id: req.params.id,
+                user_id:req.session.user_id
+            }
+        })
+        if(!bookDel){
+            res.status(404).json({ message:'error'});
+            return;
+        }
+    }catch(err){
+        res.status(500).json(err);
+    }
+} )
+
 module.exports = router;
