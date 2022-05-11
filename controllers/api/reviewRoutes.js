@@ -53,5 +53,21 @@ router.post('/', async (req,res) =>{
     }
 })
 
+router.delete('/:id', async (req,res) =>{
+    try{
+        const reviewDel = await Review.destroy({
+            where: {
+                id: req.params.id,
+                user_id:req.session.user_id
+            }
+        })
+        if(!reviewDel){
+            res.status(404).json({ message:'error'});
+            return;
+        }
+    }catch(err){
+        res.status(500).json(err);
+    }
+} )
 
 module.exports = router;
