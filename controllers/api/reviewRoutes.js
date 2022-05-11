@@ -41,6 +41,17 @@ router.put('/:id', async (req,res) =>{
     }
 })
 
+router.post('/', async (req,res) =>{
+    try{
+        const createReview = await Review.create({
+            ...req.body,
+            user_id: req.session.user_id,
+        });
+        res.status(200).json(createReview)
+    }catch(err){
+        res.status(400).json(err);
+    }
+})
 
 
 module.exports = router;
