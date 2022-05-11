@@ -16,7 +16,7 @@ router.get('/', async (req,res)=>{
 // get single route by id
 router.get('/:id', async (req,res) =>{
     try{
-        const reviewById = await Review.findAll({
+        const reviewById = await Review.findByPk({
             include: [{model: Book},{model:User}]
         })
         const review = reviewById.get({plain: true});
@@ -25,5 +25,22 @@ router.get('/:id', async (req,res) =>{
         res.status(400).json(err)
     }
 })
+
+router.put('/:id', async (req,res) =>{
+    try {
+        const updateReview = Review.update(req.body, {
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            }
+        });
+
+        res.status(200).json(updateReview)
+    }catch(err) {
+        res.status(400).json(err);
+    }
+})
+
+
 
 module.exports = router;
