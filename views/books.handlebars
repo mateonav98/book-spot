@@ -1,1 +1,17 @@
-<h1 id="search-result"></h1>
+<h1 id="search-result">
+    {{data}}
+</h1>
+
+<div>hello books</div>
+<div>{{books}}</div>
+
+
+
+<section class="flex-row justify-center">
+    <ul>
+    {{#each books as |book|}}
+        <li>Title: {{book.volumeInfo.title}}</li>
+        <li>Description: {{book.volumeInfo.description}}</li>
+    {{/each}}
+    </ul>
+  </section>
