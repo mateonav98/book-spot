@@ -14,27 +14,6 @@ async function showComment(event){
 
 reviewBtn.addEventListener('click', showComment)
 
-// async function addReview(event){
-//     event.preventDefault()
-//     let info = await event.target;
-//     const id = await info.getAttribute('data');
-//     const text = await document.getElementById('reviewText').value.trim()
-//     console.log(text)
-//     console.log(id)
-//     const response = await fetch('/api/reviews', {
-//         method: 'POST',
-//         body: JSON.stringify({review: text}),
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//     });
-//     if(response.ok){
-//         // document.location.reload()
-//     }else{
-//         alert('error posting, please try again later')
-//     }
-// }
-
 const addReview = async (event) => {
     event.preventDefault();
     let info = await event.target;
