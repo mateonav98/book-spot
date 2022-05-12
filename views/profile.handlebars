@@ -1,4 +1,3 @@
-
 {{#if books}}
 {{#each books as |book| }}
 <div>
@@ -8,12 +7,20 @@
             <p>{{book.title}}</p>
             <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="" alt="">
             <button>Unsave</button>
+            <button id="reviewBtn">Review</button>
         </div>
     </div>
+    <form id="commentForm" style="display: none;">
+        <div id="reviewBox" class="mb-3">
+            <label for="review" class="form-label">Review</label>
+            <input value="{{review.id}}" type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
+        </div>
+        <button id="reviewBtn" type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 {{/each}}
 {{else}}
 <a href="/login">You must save a book first to view this page</a>
 {{/if}}
 
-<script src="" ></script>
+<script src="/js/profile.js"></script>

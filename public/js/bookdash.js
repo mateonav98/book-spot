@@ -21,14 +21,8 @@ const commentHandler = async (event) => {
 
 };
 
-const reviewBox = document.querySelector('#reviewBox');
-const saveBtn = document.querySelector('#saveBtn');
-   
-function showReview() {
-    reviewBox.classList.remove('hidden')
-}
 
-saveBtn.addEventListener('click', showReview)
+
 
 document
   .querySelector('#reviewBtn')
