@@ -1,9 +1,9 @@
 const unsaveBook = async (event) => {
-    event.preventDefaul();
+    event.preventDefault();
     let info = await event.target;
     const id = await info.getAttribute('data');
-    const response = await fetch('/api/reviews/' , {
-        method: 'POST', 
+    const response = await fetch('/api/books/' + 1, {
+        method: 'DELETE', 
         body: JSON.stringify({book_id: id}),
         headers: {'Content-Type': 'application/json'},
     });
@@ -12,7 +12,7 @@ const unsaveBook = async (event) => {
         document.location.reload();
         console.log('UNSAVED SUCCESSFUL')
     } else {
-        alert('UNABLE TO UNSAVE BOOK')
+        alert('UNSAVE NOT SUCCESSFUL')
     };
 }
 
