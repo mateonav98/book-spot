@@ -1,4 +1,4 @@
-const reviewBtn = document.querySelector('#reviewBtn');
+// const reviewBtn = document.querySelector('#reviewBtn');
 
 async function showComment(event){
     event.preventDefault();
@@ -12,28 +12,9 @@ async function showComment(event){
     }
 }
 
-reviewBtn.addEventListener('click', showComment)
+// reviewBtn.addEventListener('click', showComment)
 
-// async function addReview(event){
-//     event.preventDefault()
-//     let info = await event.target;
-//     const id = await info.getAttribute('data');
-//     const text = await document.getElementById('reviewText').value.trim()
-//     console.log(text)
-//     console.log(id)
-//     const response = await fetch('/api/reviews', {
-//         method: 'POST',
-//         body: JSON.stringify({review: text}),
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//     });
-//     if(response.ok){
-//         // document.location.reload()
-//     }else{
-//         alert('error posting, please try again later')
-//     }
-// }
+document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click', showComment));
 
 const addReview = async (event) => {
     event.preventDefault();
@@ -56,6 +37,8 @@ const addReview = async (event) => {
     }
 };
 
-document
-.querySelector('#submitReview')
-.addEventListener('click', addReview);
+// document
+// .querySelector('#submitReview')
+// .addEventListener('click', addReview);
+document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
+

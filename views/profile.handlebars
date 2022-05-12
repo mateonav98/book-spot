@@ -6,7 +6,7 @@
         <div class="col-3 container">
             <p>{{book.title}}</p>
             <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="" alt="">
-            <button>Unsave</button>
+            <button data="{{book.id}}" id="unsaveBtn">Unsave</button>
             <button id="reviewBtn">Review</button>
         </div>
     </div>
@@ -23,4 +23,5 @@
 <a href="/login">You must save a book first to view this page</a>
 {{/if}}
 
+<script src="/js/unsaveBook.js"></script>
 <script src="/js/profile.js"></script>
