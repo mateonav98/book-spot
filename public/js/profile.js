@@ -1,5 +1,6 @@
-const reviewBtn = document.querySelector('#reviewBtn');
+// const reviewBtn = document.querySelector('#reviewBtn');
 
+//hiding review box and displaying once clicked
 async function showComment(event){
     event.preventDefault();
 
@@ -12,29 +13,10 @@ async function showComment(event){
     }
 }
 
-reviewBtn.addEventListener('click', showComment)
+document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click', showComment));
 
-// async function addReview(event){
-//     event.preventDefault()
-//     let info = await event.target;
-//     const id = await info.getAttribute('data');
-//     const text = await document.getElementById('reviewText').value.trim()
-//     console.log(text)
-//     console.log(id)
-//     const response = await fetch('/api/reviews', {
-//         method: 'POST',
-//         body: JSON.stringify({review: text}),
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//     });
-//     if(response.ok){
-//         // document.location.reload()
-//     }else{
-//         alert('error posting, please try again later')
-//     }
-// }
 
+// creating new post to book
 const addReview = async (event) => {
     event.preventDefault();
     let info = await event.target;
@@ -48,12 +30,13 @@ const addReview = async (event) => {
         });
         console.log(response)
         if (response.ok) {
-            document.location.reload();
+            // document.location.reload();
             console.log('SUCCESSFUL')
         } else {
             alert('Unable to post')
         };
     }
+    return document.querySelector('#displayText').innerHTML = text;
 };
 
 document
@@ -66,3 +49,7 @@ function upvote(){
 function downvote(){
 
 }
+
+document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
+
+
