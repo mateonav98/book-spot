@@ -1,3 +1,5 @@
+<p id="hide" style="display: none;">{{book.volumeInfo.imageLinks.smallThumbnail}}</p>
+
 <div class="container col-12 d-flex">
     <div class="col-5 container">
         <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="{{book.volumeInfo.imageLinks.smallThumbnail}}"
@@ -5,9 +7,9 @@
         <button id="saveBtn">Save Book</button>
     </div>
     <div class="col-7 container">
-        <p>{{book.volumeInfo.title}}</p>
-        <p>{{book.volumeInfo.authors}}</p>
-        <p>{{book.volumeInfo.description}}</p>
+        <p id="title">{{book.volumeInfo.title}}</p>
+        <p id="author">{{book.volumeInfo.authors}}</p>
+        <p id="description">{{book.volumeInfo.description}}</p>
         <p>{{book.volumeInfo.publishedDate}}</p>
     </div>
 </div>
