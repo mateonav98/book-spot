@@ -1,6 +1,6 @@
 <div class="container col-12 d-flex">
     <div class="col-5 container">
-        <img id="custom-img" class="img-fluid w-100 mb-3" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="harry potter">
+        <img id="custom-img" class="img-fluid w-100 mb-3" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="pic">
         <button>Save Book</button>
     </div>
     <div class="col-7 container">
@@ -8,14 +8,14 @@
         <p>{{book.volumeInfo.authors}}</p>
         <p>{{book.volumeInfo.description}}</p>
         <p>{{book.volumeInfo.publishedDate}}</p>
-        <form>
+        <form id="reviewBtn">
             <div class="mb-3">
                 <label for="review" class="form-label">Review</label>
-                <input type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
+                <input value= "{{review.id}}" type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
             </div>
             <button id="reviewBtn" type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>
 
-<script src="" ></script>
+<script src="js/bookresults.js" ></script>

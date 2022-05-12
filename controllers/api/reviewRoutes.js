@@ -46,8 +46,11 @@ router.post('/', async (req,res) =>{
         const createReview = await Review.create({
             ...req.body,
             user_id: req.session.user_id,
+            logged_in: req.session.logged_in,
+            book_id: req.session.book_id
         });
         res.status(200).json(createReview)
+        
     }catch(err){
         res.status(400).json(err);
     }
