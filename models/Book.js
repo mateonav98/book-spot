@@ -35,6 +35,16 @@ Book.init(
         key: 'id',
       },
     },
+    upvote:{
+      type:DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue:"0"
+    },
+    downvote:{
+      type: DataTypes.INTEGER,
+      allowNull:false,
+      defaultValue: "0",
+    }
   },
   {
     sequelize,
