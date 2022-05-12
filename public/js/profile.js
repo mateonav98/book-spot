@@ -59,3 +59,10 @@ const addReview = async (event) => {
 document
 .querySelector('#submitReview')
 .addEventListener('click', addReview);
+
+function upvote(){
+    
+}
+function downvote(){
+
+}
