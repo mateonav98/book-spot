@@ -13,9 +13,10 @@
     <form id="commentForm" style="display: none;">
         <div id="reviewBox" class="mb-3">
             <label for="review" class="form-label">Review</label>
-            <input type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
+            <input name="input" type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
         </div>
         <button data="{{book.id}}" id="submitReview" type="submit" class="btn btn-primary">Submit</button>
+        <p id="displayText"></p>
     </form>
 </div>
 {{/each}}
