@@ -4,8 +4,7 @@ const getSingleBook = (event) => {
   };
   
 const images = document.querySelectorAll("img");
-console.log('a');
-
 for (const image of images) {
     image.addEventListener('click', getSingleBook);
 }
+

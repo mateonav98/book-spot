@@ -1,5 +1,6 @@
-{{#if logged_in}}
-{{Books as |book| }}
+
+{{#if books}}
+{{#each books as |book| }}
 <div>
     <h1>My saved books:</h1>
     <div class="container col-12 d-flex">
@@ -10,9 +11,9 @@
         </div>
     </div>
 </div>
-
+{{/each}}
 {{else}}
-<a href="/login">You must login first to view this page</a>
+<a href="/login">You must save a book first to view this page</a>
 {{/if}}
 
 <script src="" ></script>
