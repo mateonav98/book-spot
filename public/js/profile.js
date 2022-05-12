@@ -13,8 +13,6 @@ async function showComment(event){
     }
 }
 
-// reviewBtn.addEventListener('click', showComment)
-
 document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click', showComment));
 
 
