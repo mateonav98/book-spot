@@ -1,4 +1,4 @@
-const reviewBtn = document.querySelector('#reviewBtn');
+// const reviewBtn = document.querySelector('#reviewBtn');
 
 async function showComment(event){
     event.preventDefault();
@@ -12,7 +12,9 @@ async function showComment(event){
     }
 }
 
-reviewBtn.addEventListener('click', showComment)
+// reviewBtn.addEventListener('click', showComment)
+
+document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click', showComment));
 
 const addReview = async (event) => {
     event.preventDefault();
@@ -35,6 +37,8 @@ const addReview = async (event) => {
     }
 };
 
-document
-.querySelector('#submitReview')
-.addEventListener('click', addReview);
+// document
+// .querySelector('#submitReview')
+// .addEventListener('click', addReview);
+document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
+

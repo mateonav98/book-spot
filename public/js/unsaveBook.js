@@ -2,10 +2,8 @@ const unsaveBook = async (event) => {
     event.preventDefault();
     let info = await event.target;
     const id = await info.getAttribute('data');
-    const response = await fetch('/api/books/' + 1, {
+    const response = await fetch(`/api/books/${id}`, {
         method: 'DELETE', 
-        body: JSON.stringify({book_id: id}),
-        headers: {'Content-Type': 'application/json'},
     });
     console.log(response)
     if (response.ok) {
@@ -16,6 +14,8 @@ const unsaveBook = async (event) => {
     };
 }
 
-document
-.querySelector('#unsaveBtn')
-.addEventListener('click', unsaveBook);
+// document
+// .querySelector('#unsaveBtn')
+// .addEventListener('click', unsaveBook);
+
+document.querySelectorAll('#unsaveBtn').forEach(e => e.addEventListener('click', unsaveBook));
