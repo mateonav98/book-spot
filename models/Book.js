@@ -22,7 +22,11 @@ Book.init(
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    image:{
+      type: DataTypes.TEXT,
+      allowNull: true
     },
     user_id: {
       type: DataTypes.INTEGER,
