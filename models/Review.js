@@ -28,7 +28,7 @@ Review.init(
             },
         },
         book_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'book',
                 key: 'id',
