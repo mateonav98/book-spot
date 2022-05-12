@@ -1,5 +1,6 @@
 const getData = (event) => {
     event.preventDefault();
+    topbar.show();
     const search = document.querySelector('#searchText').value.trim();
     location.href = '/api/books?searchTerm=' + search;
 
