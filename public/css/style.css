@@ -11,6 +11,14 @@
     margin-right: 10px;
 }
 
+.bg-custom{
+    background-color: #004aad;
+    border-radius: 10px;
+    color: white;
+    border: solid;
+    border-color: #004aad;
+    margin-right: 10px;
+}
 #logout{
     background-color: #004aad;
     border-radius: 10px;
@@ -77,3 +85,17 @@
 @media (min-width: 1200px) {#customHeight {
     height: 500px;
 }}
+
+@media (max-width:575px) {
+    
+}
+
+@media (min-width: 576px) { 
+    
+}
+
+@media (max-width: 768px) {
+    .disappear{
+        display: none;
+    }
+}

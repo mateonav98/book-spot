@@ -47,7 +47,6 @@ router.post('/', async (req,res) =>{
             ...req.body,
             user_id: req.session.user_id,
             logged_in: req.session.logged_in,
-            book_id: req.session.book_id
         });
         res.status(200).json(createReview)
         

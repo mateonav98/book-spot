@@ -5,13 +5,8 @@ const {Book, Review} = require('../../models');
 // router to get all saved books 
 router.get('/', async (req,res) =>{
     try{
-        // const bookData = await Book.findAll({
-        //     include: [{model: Review}]
-        // })
-        // const book = bookData.map((data) => data.get({plain:true}));
-
         const searchTerm = req.query.searchTerm;
-        // console.log(req);
+        
         console.log(req.query.searchTerm);
 
         const response = await fetch('https://www.googleapis.com/books/v1/volumes?q=' + searchTerm);  

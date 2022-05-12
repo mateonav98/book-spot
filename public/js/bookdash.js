@@ -1,6 +1,5 @@
 const commentHandler = async (event) => {
     event.preventDefault();
-    console.log('h_i')
     const images = document.querySelector("img");
     const newId = images.id
     console.log(newId)
@@ -13,7 +12,7 @@ const commentHandler = async (event) => {
         });
         console.log(response)
         if (response.ok) {
-            // document.location.reload();
+            document.location.reload();
             console.log('SUCCESSFUL')
         } else {
             alert('Unable to post')
