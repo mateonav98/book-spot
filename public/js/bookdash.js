@@ -1,26 +1,30 @@
-const commentHandler = async (event) => {
-    event.preventDefault();
-    const images = document.querySelector("img");
-    const newId = images.id
-    console.log(newId)
-    const text = await document.querySelector('#reviewText').value.trim();
-    if (text) {
-        const response = await fetch('/api/reviews', {
-            method: 'POST',
-            body: JSON.stringify({review: text,}),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        console.log(response)
-        if (response.ok) {
-            document.location.reload();
-            console.log('SUCCESSFUL')
-        } else {
-            alert('Unable to post')
-        };
-    }
 
-};
+async function saveBook(event){
+    event.preventDefault();
+    const title = document.getElementById('title')
+    const titleT = title.textContent
+    const author= document.getElementById('author')
+    const authorT = author.textContent
+    const description = document.getElementById('description')
+    const desT = description.textContent
+    const image = document.getElementById('hide')
+    const imLink = image.textContent
+    console.log(desT);
+    const response = await fetch(`/api/books`, {
+        method: 'POST',
+        body: JSON.stringify({title:titleT,author:authorT,image:imLink}),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if(response.ok){
+        document.location.replace('/profile')
+        
+    }else{
+        alert('error posting, please try again later')
+    }
+}
 
 document
-  .querySelector('#reviewBtn')
-  .addEventListener('submit', commentHandler);
+.querySelector('#saveBtn')
+.addEventListener('click', saveBook);
