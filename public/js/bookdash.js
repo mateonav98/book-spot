@@ -21,6 +21,9 @@ const commentHandler = async (event) => {
 
 };
 
+
+
+
 document
   .querySelector('#reviewBtn')
   .addEventListener('submit', commentHandler);
