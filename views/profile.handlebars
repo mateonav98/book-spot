@@ -13,11 +13,12 @@
     <form id="commentForm" style="display: none;">
         <div id="reviewBox" class="mb-3">
             <label for="review" class="form-label">Review</label>
-            <input type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
+            <input name="input" type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
         </div>
         <button data="{{book.id}}" id="submitReview" type="submit" class="btn bg-custom">Submit</button>
         <button id="upvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡹</button>
         <button id="downvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡻</button> 
+        <p id="displayText"></p>
     </form>
 </div>
 {{/each}}
