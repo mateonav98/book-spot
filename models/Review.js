@@ -14,7 +14,6 @@ Review.init(
         review: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
         },
         created_date: {
             type: DataTypes.DATEONLY,
@@ -29,11 +28,11 @@ Review.init(
             },
         },
         book_id: {
-            type: DataTypes.INTEGER,
-            // references: {
-            //     model: 'book',
-            //     key: 'id',
-            // },
+            type: DataTypes.STRING,
+            references: {
+                model: 'book',
+                key: 'id',
+            },
         },
     },
     {
