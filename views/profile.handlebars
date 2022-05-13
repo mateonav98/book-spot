@@ -1,4 +1,5 @@
 <h1>My saved books:</h1>
+{{!-- getting book data --}}
 {{#if user.books}}
 {{#each user.books as |book|}}
 <div id="custom-height" class="container-fluid col-12 d-flex">
@@ -19,6 +20,7 @@
         <button id="downvote" data="{{book.id}}" data-value="{{book.downvote}}" type="click" class="btn bg-custom font-weight-bold">⬇</button> 
         <p id="displayText"></p>
     </form>
+    {{!-- getting review data --}}
     {{#each book.reviews as |rev|}}
     <div>
     <form id="updateForm" style="display: none;">
