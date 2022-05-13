@@ -20,16 +20,24 @@
     </form>
     <div class="col-9 bg-light mb-3 bolder scroll">
     {{#each book.reviews as |rev|}}
-    <p>{{rev.review}}</p>
-    <button data="{{rev.id}}" id="editBtn">edit</button>
-    <button data="{{rev.id}}" id="delBtn">delete</button>
+    <div>
+    <form id="updateForm" style="display: none;">
+        <div id="updateBox" class="mb-3">
+            <label for="updatr" class="form-label">Edit</label>
+            <input name="input" type="text" class="form-control" id="updateText" aria-describedby="updateText">
+            <button data="{{rev.id}}" id="postUpdate">Post Update</button>
+        </div>
+    </form>
+        <p>{{rev.review}}</p>
+        <button data="{{rev.id}}" id="editBtn">edit</button>
+        <button data="{{rev.id}}" id="delBtn">delete</button>
+    </div>
     {{/each}}
     </div>
 </div>
 {{/each}}
 {{else}}
-<a href="/">You must save a book first to view this page</a>
+<a href="/login">You must save a book first to view this page</a>
 {{/if}}
-<script src="js/topbar/topbar.js"></script>
 <script src="/js/unsaveBook.js"></script>
 <script src="/js/profile.js"></script>
