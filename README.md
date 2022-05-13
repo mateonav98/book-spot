@@ -10,16 +10,70 @@ https://aqueous-plateau-74718.herokuapp.com/
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [Gif Demo](#gif-demo)
 * [Code Snippets](#code-snippets)
 * [Credits](#credits)
 * [Contributors](#contributors)
 * [License](#license)
 
 ## Installation
-
+The following will be a guide about installing the application and getting it to run once completed
+- Start by forking the repository 
+- Next perform a npm install
+```bash
+npm install 
+```
+- Then, create a dotenv file input the DB_NAME=book_db, DB_USER="your_user", DB_PASSWORD="your_password" 
+- Now desired changes can be made if desired
+- Then, seed the database
+```bash
+npm run seed
+```
+- Once that is all completed, in the terminal start the server
+```bash
+node server.js 
+```
 ## Usage
 
+The following application allows the user to:
+- Search for books by volume, genre, author
+- See details about the book such as author, title, description
+- Save the book to their own personal list
+- Upvote and downvote the book
+- Add reviews for the book
+- Delete books from personal profile
+- Create personal account with name, email, and password
+
+## Gif Demo
+
+<img src="./public/images/demo.gif" width=900px>
+
 ## Code Snippets
+
+
+Example of fetching from Google Book API
+
+<img src="./public/images/googleAPIsearch.png" width=600px>
+
+Application uses Handlebars as the templating language
+
+<img src="./public/images/mainHandlebars.png" width=600px>
+
+Example of how Handlebars was used to render results
+
+<img src="./public/images/singlebook.png" width=600px>
+
+Associations for the model
+
+<img src="./public/images/many2many.png" width=600px>
+
+Separating routes for cleaner code
+
+<img src="./public/images/apiRoutes.png" width=600px>
+
+
+
+
 
 ## Credits
 
