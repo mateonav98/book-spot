@@ -54,8 +54,8 @@ async function upvote(event){
         const id = await btn.getAttribute('data');
         const vote = await btn.getAttribute('data-value');
         const newVote = parseInt(vote,10)+1
-        console.log(vote)
-        console.log(id)
+        // console.log(vote)
+        // console.log(id)
         const response = await fetch(`/api/books/${id}`, {
             method: 'PUT',
             body: JSON.stringify({upvote: newVote}),
@@ -65,15 +65,33 @@ async function upvote(event){
         });
         console.log(response)
         if(response.ok){
-            //document.location.replace('/profile')
-            
+            document.location.replace('/profile')
         }else{
             alert('error posting, please try again later')
         }
 }
 document.querySelectorAll('#upvote').forEach(e => e.addEventListener('click', upvote));
-function downvote(){
-
+async function downvote(event){
+    event.preventDefault();
+    const btn = event.target;
+    const id = await btn.getAttribute('data');
+    const vote = await btn.getAttribute('data-value');
+    const newVote = parseInt(vote,10)+1
+    // console.log(vote)
+    // console.log(id)
+    const response = await fetch(`/api/books/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({downvote: newVote}),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    console.log(response)
+    if(response.ok){
+        document.location.replace('/profile')
+    }else{
+        alert('error posting, please try again later')
+    }
 }
 document.querySelectorAll('#downvote').forEach(e => e.addEventListener('click', downvote));
 
