@@ -3,8 +3,9 @@
 //hiding review box and displaying once clicked
 async function showComment(event){
     event.preventDefault();
-
-    const variableForm = document.getElementById('commentForm')
+    let info = event.target;
+    const parent = await info.parentNode.parentNode.parentNode;
+    const variableForm = await parent.querySelector('#commentForm') 
     console.log(variableForm)
     if (variableForm.style.display === "none") {
         variableForm.style.display = "block";
@@ -20,8 +21,9 @@ document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click',
 const addReview = async (event) => {
     event.preventDefault();
     let info = await event.target;
+    const parent = info.parentNode
+    const text = parent.querySelector('#reviewText').value.trim();
     const id = await info.getAttribute('data');
-    const text = await document.querySelector('#reviewText').value.trim();
     if (text) {
         const response = await fetch('/api/reviews', {
             method: 'POST',
@@ -30,7 +32,7 @@ const addReview = async (event) => {
         });
         console.log(response)
         if (response.ok) {
-            // document.location.reload();
+            document.location.reload();
             console.log('SUCCESSFUL')
         } else {
             alert('Unable to post')
@@ -39,6 +41,16 @@ const addReview = async (event) => {
     return document.querySelector('#displayText').innerHTML = text;
 };
 
+document
+.querySelector('#submitReview')
+.addEventListener('click', addReview);
+
+function upvote(){
+    
+}
+function downvote(){
+
+}
 
 document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
 
