@@ -28,13 +28,14 @@ router.get('/profile', withAuth, async (req, res) => {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ model: Book }],
+        include: [{ model: Book, include:[{model:Review}]}]
       });
   
       const user = userData.get({ plain: true });
-  
+      console.log(user)
+      //res.status(200).json(user)
       res.render('profile', {
-        ...user,
+        user,
         logged_in: true
       });
     } catch (err) {
