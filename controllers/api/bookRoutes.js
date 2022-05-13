@@ -2,7 +2,6 @@ const fetch = require("node-fetch");
 const  router  = require("express").Router();
 const {Book, Review} = require('../../models');
 
-// router to get all saved books 
 router.get('/', async (req,res) =>{
     try{
         const searchTerm = req.query.searchTerm;

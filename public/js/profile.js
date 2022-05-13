@@ -1,5 +1,6 @@
 // const reviewBtn = document.querySelector('#reviewBtn');
 
+//hiding review box and displaying once clicked
 async function showComment(event){
     event.preventDefault();
 
@@ -12,10 +13,10 @@ async function showComment(event){
     }
 }
 
-// reviewBtn.addEventListener('click', showComment)
-
 document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click', showComment));
 
+
+// creating new post to book
 const addReview = async (event) => {
     event.preventDefault();
     let info = await event.target;
@@ -29,16 +30,16 @@ const addReview = async (event) => {
         });
         console.log(response)
         if (response.ok) {
-            document.location.reload();
+            // document.location.reload();
             console.log('SUCCESSFUL')
         } else {
             alert('Unable to post')
         };
     }
+    return document.querySelector('#displayText').innerHTML = text;
 };
 
-// document
-// .querySelector('#submitReview')
-// .addEventListener('click', addReview);
+
 document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
+
 
