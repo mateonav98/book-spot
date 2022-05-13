@@ -1,6 +1,23 @@
-// const reviewBtn = document.querySelector('#reviewBtn');
+// unsaving a book
+const unsaveBook = async (event) => {
+    event.preventDefault();
+    topbar.show();
+    let info = await event.target;
+    const id = await info.getAttribute('data');
+    const response = await fetch(`/api/books/${id}`, {
+        method: 'DELETE', 
+    });
+    console.log(response)
+    if (response.ok) {
+        document.location.reload(true);
+        console.log('UNSAVED SUCCESSFUL')
+    } else {
+        alert('UNSAVE NOT SUCCESSFUL')
+    };
+}
+document.querySelectorAll('#unsaveBtn').forEach(e => e.addEventListener('click', unsaveBook));
 
-//hiding review box and displaying once clicked
+//hiding review box and displaying once button is clicked
 async function showComment(event){
     event.preventDefault();
     let info = event.target;
@@ -14,7 +31,6 @@ async function showComment(event){
         variableForm.style.display = "none";
     }
 }
-
 document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click', showComment));
 
 
@@ -41,14 +57,9 @@ const addReview = async (event) => {
     }
     return document.querySelector('#displayText').innerHTML = text;
 };
-
-
 document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
 
-// document
-// .querySelector('#submitReview')
-// .addEventListener('click', addReview);
-
+// upvoting 
 async function upvote(event){
         event.preventDefault();
         const btn = event.target;
@@ -96,7 +107,7 @@ async function downvote(event){
 }
 document.querySelectorAll('#downvote').forEach(e => e.addEventListener('click', downvote));
 
-
+// showing edit text bar when clicking the edit button
 async function showUpdate(event){
     event.preventDefault();
     let info = event.target;
@@ -110,7 +121,6 @@ async function showUpdate(event){
         variableForm.style.display = "none";
     }
 }
-
 document.querySelectorAll('#editBtn').forEach(e => e.addEventListener('click', showUpdate));
 
 // updating post to book
@@ -134,7 +144,6 @@ const updateReview = async (event) => {
     }
     return document.querySelector('#displayText').innerHTML = text;
 };
-
 document.querySelectorAll('#postUpdate').forEach(e => e.addEventListener('click', updateReview));
 
 
@@ -148,7 +157,7 @@ const deleteReview = async (event) => {
     });
     console.log(response)
     if (response.ok) {
-        document.location.reload();
+        document.location.reload(true);
         console.log('DELETE SUCCESSFUL')
     } else {
         alert('DELETE NOT SUCCESSFUL')

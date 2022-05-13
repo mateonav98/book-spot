@@ -1,5 +1,6 @@
 <p id="hide" style="display: none;">{{book.volumeInfo.imageLinks.smallThumbnail}}</p>
 
+{{!-- displaying book image, title, author, and description info from google api --}}
 <div class="container col-12 d-flex">
     <div class="col-5 container">
         <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="pic">
@@ -9,7 +10,7 @@
         <p id="author">{{book.volumeInfo.authors}}</p>
         <p id="description" class="single-book-des">{{book.volumeInfo.description}}</p>
         <p>{{book.volumeInfo.publishedDate}}</p>
-        <button id="saveBtn" class="button-55" >Save Book</button>
+        <button id="saveBtn" class="button-55">Save Book</button>
     </div>
 </div>
 
