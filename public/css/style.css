@@ -54,12 +54,13 @@
     text-align: center;
 }
 
-.scroll {
-    overflow:scroll;
-}
 
 @media (max-width:575px) {
     #customHeight {
+        height: 200px;
+    }
+    .scroll {
+        overflow:scroll;
         height: 200px;
     }
 }
@@ -68,16 +69,28 @@
     #customHeight {
         height: 250px;
     }
+    .scroll {
+        overflow:scroll;
+        height: 250px;
+    }
 }
 
 @media (min-width: 768px) {
     #customHeight {
         height: 300px;
     }
+    .scroll {
+        overflow:scroll;
+        height: 300px;
+    }
 }
 
 @media (min-width: 992px) {
     #customHeight {
+        height: 400px;
+    }
+    .scroll {
+        overflow:scroll;
         height: 400px;
     }
 }
