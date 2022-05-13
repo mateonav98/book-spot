@@ -14,7 +14,7 @@
             <input name="input" type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
         </div>
         <button data="{{book.id}}" id="submitReview" type="submit" class="btn bg-custom">Submit</button>
-        <button id="upvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡹</button>
+        <button id="upvote" data="{{book.id}}" data-value="{{book.upvote}}" type="click" class="btn bg-custom font-weight-bold">🡹</button>
         <button id="downvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡻</button> 
         <p id="displayText"></p>
     </form>

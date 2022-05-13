@@ -6,6 +6,7 @@ async function showComment(event){
     topbar.show();
     let info = event.target;
     const parent = await info.parentNode.parentNode;
+    console.log(parent)
     const variableForm = await parent.querySelector('#commentForm') 
     console.log(variableForm)
     if (variableForm.style.display === "none") {
@@ -47,12 +48,34 @@ document
 .querySelector('#submitReview')
 .addEventListener('click', addReview);
 
-function upvote(){
-    
+async function upvote(event){
+        event.preventDefault();
+        const btn = event.target;
+        const id = await btn.getAttribute('data');
+        const vote = await btn.getAttribute('data-value');
+        const newVote = parseInt(vote,10)+1
+        console.log(vote)
+        console.log(id)
+        const response = await fetch(`/api/books/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({upvote: newVote}),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        console.log(response)
+        if(response.ok){
+            //document.location.replace('/profile')
+            
+        }else{
+            alert('error posting, please try again later')
+        }
 }
+document.querySelectorAll('#upvote').forEach(e => e.addEventListener('click', upvote));
 function downvote(){
 
 }
+document.querySelectorAll('#downvote').forEach(e => e.addEventListener('click', downvote));
 
 document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
 
