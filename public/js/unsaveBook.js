@@ -1,5 +1,6 @@
 const unsaveBook = async (event) => {
     event.preventDefault();
+    topbar.show();
     let info = await event.target;
     const id = await info.getAttribute('data');
     const response = await fetch(`/api/books/${id}`, {

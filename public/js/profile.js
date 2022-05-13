@@ -3,6 +3,7 @@
 //hiding review box and displaying once clicked
 async function showComment(event){
     event.preventDefault();
+    topbar.show();
     let info = event.target;
     const parent = await info.parentNode.parentNode;
     const variableForm = await parent.querySelector('#commentForm') 
@@ -20,6 +21,7 @@ document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click',
 // creating new post to book
 const addReview = async (event) => {
     event.preventDefault();
+    topbar.show();
     let info = await event.target;
     const parent = info.parentNode
     const text = parent.querySelector('#reviewText').value.trim();
