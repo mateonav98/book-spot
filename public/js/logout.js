@@ -1,3 +1,4 @@
+// log out
 const logout = async () => {
 
   topbar.show();

@@ -13,6 +13,7 @@ router.get('/', async (req,res)=>{
         res.status(500).json(err)
     }
 })
+
 // get single route by id
 router.get('/:id', async (req,res) =>{
     try{
@@ -26,12 +27,12 @@ router.get('/:id', async (req,res) =>{
     }
 })
 
+//update single review
 router.put('/:id', async (req,res) =>{
     try {
         const updateReview = Review.update(req.body, {
             where: {
                 id: req.params.id,
-                // user_id: req.session.user_id,
             }
         });
 
@@ -41,12 +42,12 @@ router.put('/:id', async (req,res) =>{
     }
 })
 
+//create a review
 router.post('/', async (req,res) =>{
     try{
         const createReview = await Review.create({
             ...req.body,
             user_id: req.session.user_id,
-            // logged_in: req.session.logged_in,
         });
         res.status(200).json(createReview)
         
@@ -55,6 +56,7 @@ router.post('/', async (req,res) =>{
     }
 })
 
+//delete a review
 router.delete('/:id', async (req,res) =>{
     try{
         const reviewDel = await Review.destroy({
