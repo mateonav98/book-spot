@@ -1,14 +1,12 @@
 <h1>My saved books:</h1>
 {{#if user.books}}
 {{#each user.books as |book|}}
-<div>
-    <div class="container col-12 d-flex">
-        <div class="col-3 container">
-            <p>{{book.title}}</p>
-            <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="{{book.image}}" alt="">
-            <button data="{{book.id}}" id="unsaveBtn">Unsave</button>
-            <button id="reviewBtn">Review</button>
-        </div>
+<div id="custom-height" class="container-fluid col-12 d-flex">
+    <div class="col-3 container">
+        <p class="text-center">{{book.title}}</p>
+        <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="{{book.image}}" alt="">
+        <button data="{{book.id}}" id="unsaveBtn">Unsave</button>
+        <button id="reviewBtn">Review</button>
     </div>
     <form id="commentForm" style="display: none;">
         <div id="reviewBox" class="mb-3">
@@ -20,11 +18,13 @@
         <button id="downvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡻</button> 
         <p id="displayText"></p>
     </form>
+    <div class="col-9 bg-light mb-3 bolder scroll">
     {{#each book.reviews as |rev|}}
     <p>{{rev.review}}</p>
     <button data="{{rev.id}}" id="editBtn">edit</button>
     <button data="{{rev.id}}" id="delBtn">delete</button>
     {{/each}}
+    </div>
 </div>
 {{/each}}
 {{else}}
