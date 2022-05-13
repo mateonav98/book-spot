@@ -25,7 +25,8 @@ const loginFormHandler = async (event) => {
   
   const signupFormHandler = async (event) => {
     event.preventDefault();
-  
+    topbar.show();
+    
     const name = document.querySelector('#inputName').value.trim();
     const email = document.querySelector('#inputEmail').value.trim();
     const password = document.querySelector('#inputPassword').value.trim();
