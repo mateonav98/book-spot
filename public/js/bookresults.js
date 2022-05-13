@@ -1,3 +1,4 @@
+// getting result of a single book
 const getSingleBook = (event) => {
     event.preventDefault();
 

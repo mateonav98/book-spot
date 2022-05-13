@@ -1,4 +1,4 @@
-//get book data
+//get book data from search result
 const getData = (event) => {
     event.preventDefault();
  

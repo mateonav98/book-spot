@@ -1,6 +1,7 @@
 const fetch = require("node-fetch");
 const  router  = require("express").Router();
 
+//getting book data from search term
 router.get('/', async (req,res) =>{
     try{
         const searchTerm = req.query.searchTerm;
