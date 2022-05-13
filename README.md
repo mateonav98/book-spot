@@ -1,6 +1,12 @@
 # Book Spot
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Description
+This application allows user to search books by author, genre and more. Each book will be accompanied by author, description and published date. User can favorite books they like and the book data will be saved and display under their profile page. Application is deployed through Heroku.
+
+Deployed link:
+https://aqueous-plateau-74718.herokuapp.com/
+
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -30,20 +36,20 @@
 |||Node fetch|--
 
 
-| API used|            |       |
-| ------------- |:-------------:| -----:|
+| API used| 
+| ------------- |
 | [Google Book API](https://developers.google.com/books)|
 
-| Third Party Libraries|               |       |
-| ------------- |:-------------:| -----:|
-| [Boostrap](https://getbootstrap.com/)  | 
+| Third Party Libraries|
+| ------------- |
+| [Boostrap](https://getbootstrap.com/) | 
 | [Topbar](https://buunguyen.github.io/topbar/)
 
 
 ## Contributors
-* Mateo Navarro [LinkedIn](www.linkedin.com/in/kristixxg) || [GitHub](https://github.com/kristixxg)
-* Kristy Guo [LinkedIn](www.linkedin.com/in/kristixxg) || [GitHub](https://github.com/kristixxg)
-* Richard Ferry [LinkedIn](www.linkedin.com/in/kristixxg) || [GitHub](https://github.com/kristixxg)
+* Mateo Navarro [LinkedIn](https://www.linkedin.com/in/mateonav/) | [GitHub](https://github.com/mateonav98)
+* Kristy Guo [LinkedIn](www.linkedin.com/in/kristixxg) | [GitHub](https://github.com/kristixxg)
+* Richard Ferry [LinkedIn](https://www.linkedin.com/in/richard-ferry-83120514b/) | [GitHub](https://github.com/rich-f-p)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
