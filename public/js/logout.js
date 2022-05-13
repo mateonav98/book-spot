@@ -1,4 +1,7 @@
 const logout = async () => {
+
+  topbar.show();
+  
     const response = await fetch('/api/users/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

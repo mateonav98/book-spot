@@ -1,6 +1,7 @@
 
 async function saveBook(event){
     event.preventDefault();
+
     const title = document.getElementById('title')
     const titleT = title.textContent
     const author= document.getElementById('author')
