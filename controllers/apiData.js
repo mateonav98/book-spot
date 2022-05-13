@@ -22,26 +22,6 @@ const fetch = require('node-fetch');
       }
     )}
   );
-
-//   const getData = (event) => {
-//     event.preventDefault();
-//     const search = document.querySelector('#searchText').value.trim();
-//     fetch('https://www.googleapis.com/books/v1/volumes?q=' + search)
-//     .then(function (response) {
-//       //We write the remainder of the fetch() request, as follows:
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     });
   
-
-// };
-
-// document
-// .querySelector('.form')
-// .addEventListener('click', getData);
-
-
   module.exports = router;
 

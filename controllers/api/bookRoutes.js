@@ -5,9 +5,7 @@ const {Book, Review} = require('../../models');
 router.get('/', async (req,res) =>{
     try{
         const searchTerm = req.query.searchTerm;
-        
         console.log(req.query.searchTerm);
-
         const response = await fetch('https://www.googleapis.com/books/v1/volumes?q=' + searchTerm);  
         console.log(response); 
         const data = await response.json();
