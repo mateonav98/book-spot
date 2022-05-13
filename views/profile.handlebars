@@ -15,15 +15,15 @@
             <input name="input" type="text" class="form-control" id="reviewText" aria-describedby="reviewText">
         </div>
         <button data="{{book.id}}" id="submitReview" type="submit" class="btn bg-custom">Submit</button>
-        <button id="upvote" data="{{book.id}}" data-value="{{book.upvote}}" type="click" class="btn bg-custom font-weight-bold">🡹</button>
-        <button id="downvote" data="{{book.id}}" data-value="{{book.downvote}}" type="click" class="btn bg-custom font-weight-bold">🡻</button> 
+        <button id="upvote" data="{{book.id}}" data-value="{{book.upvote}}" type="click" class="btn bg-custom font-weight-bold">⬆</button>
+        <button id="downvote" data="{{book.id}}" data-value="{{book.downvote}}" type="click" class="btn bg-custom font-weight-bold">⬇</button> 
         <p id="displayText"></p>
     </form>
     {{#each book.reviews as |rev|}}
     <div>
     <form id="updateForm" style="display: none;">
         <div id="updateBox" class="mb-3">
-            <label for="updatr" class="form-label">Edit</label>
+            <label for="update" class="form-label">Edit</label>
             <input name="input" type="text" class="form-control" id="updateText" aria-describedby="updateText">
             <button data="{{rev.id}}" id="postUpdate">Post Update</button>
         </div>
@@ -37,7 +37,7 @@
 </div>
 {{/each}}
 {{else}}
-<a href="/login">You must save a book first to view this page</a>
+<a href="/">You must save a book first to view this page</a>
 {{/if}}
 <script src="/js/unsaveBook.js"></script>
 <script src="/js/profile.js"></script>
