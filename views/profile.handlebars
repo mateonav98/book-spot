@@ -1,11 +1,11 @@
-{{#if books}}
-{{#each books as |book| }}
+<h1>My saved books:</h1>
+{{#if user.books}}
+{{#each user.books as |book|}}
 <div>
-    <h1>My saved books:</h1>
     <div class="container col-12 d-flex">
         <div class="col-3 container">
             <p>{{book.title}}</p>
-            <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="" alt="">
+            <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="{{book.image}}" alt="">
             <button data="{{book.id}}" id="unsaveBtn">Unsave</button>
             <button id="reviewBtn">Review</button>
         </div>
@@ -17,22 +17,28 @@
         </div>
         <button data="{{book.id}}" id="submitReview" type="submit" class="btn bg-custom">Submit</button>
         <button id="upvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡹</button>
-        <button id="downvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡻</button> 
+        <button id="downvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡻</button>
+        <p id="displayText"></p>
     </form>
-    <p id="displayText"></p>
+    
+    {{#each book.reviews as |rev|}}
+    <div>
     <form id="updateForm" style="display: none;">
-        <div id="reviewBox" class="mb-3">
-            <label for="review" class="form-label">Review</label>
-            <input name="input" type="text" class="form-control" id="updateText" aria-describedby="reviewText">
+        <div id="updateBox" class="mb-3">
+            <label for="updatr" class="form-label">Edit</label>
+            <input name="input" type="text" class="form-control" id="updateText" aria-describedby="updateText">
+            <button data="{{rev.id}}" id="postUpdate">Post Update</button>
         </div>
     </form>
-        <button data="{{review.id}}" id="updateBtn" type="submit" class="btn bg-custom">Update</button>
-        <button data="{{review.id}}" id="deleteBtn" type="submit" class="btn bg-custom">Delete</button> 
+        <p>{{rev.review}}</p>
+        <button data="{{rev.id}}" id="editBtn">edit</button>
+        <button data="{{rev.id}}" id="delBtn">delete</button>
+    </div>
+    {{/each}}
 </div>
 {{/each}}
 {{else}}
 <a href="/login">You must save a book first to view this page</a>
 {{/if}}
-
 <script src="/js/unsaveBook.js"></script>
 <script src="/js/profile.js"></script>

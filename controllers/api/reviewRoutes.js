@@ -31,7 +31,7 @@ router.put('/:id', async (req,res) =>{
         const updateReview = Review.update(req.body, {
             where: {
                 id: req.params.id,
-                // user_id: req.session.user_id,
+                user_id: req.session.user_id,
             }
         });
 
@@ -60,7 +60,7 @@ router.delete('/:id', async (req,res) =>{
         const reviewDel = await Review.destroy({
             where: {
                 id: req.params.id,
-                user_id:req.session.user_id
+                // user_id:req.session.user_id
             }
         })
         if(!reviewDel){
