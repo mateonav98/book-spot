@@ -3,8 +3,9 @@
 //hiding review box and displaying once clicked
 async function showComment(event){
     event.preventDefault();
-
-    const variableForm = document.getElementById('commentForm')
+    let info = event.target;
+    const parent = await info.parentNode.parentNode.parentNode;
+    const variableForm = await parent.querySelector('#commentForm') 
     console.log(variableForm)
     if (variableForm.style.display === "none") {
         variableForm.style.display = "block";
@@ -30,7 +31,7 @@ const addReview = async (event) => {
         });
         console.log(response)
         if (response.ok) {
-            // document.location.reload();
+            document.location.reload();
             console.log('SUCCESSFUL')
         } else {
             alert('Unable to post')
