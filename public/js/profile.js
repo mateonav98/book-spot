@@ -21,8 +21,9 @@ document.querySelectorAll('#reviewBtn').forEach(e => e.addEventListener('click',
 const addReview = async (event) => {
     event.preventDefault();
     let info = await event.target;
+    const parent = info.parentNode
+    const text = parent.querySelector('#reviewText').value.trim();
     const id = await info.getAttribute('data');
-    const text = await document.querySelector('#reviewText').value.trim();
     if (text) {
         const response = await fetch('/api/reviews', {
             method: 'POST',
