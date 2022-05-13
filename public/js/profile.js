@@ -4,7 +4,7 @@
 async function showComment(event){
     event.preventDefault();
     let info = event.target;
-    const parent = await info.parentNode.parentNode.parentNode;
+    const parent = await info.parentNode.parentNode;
     const variableForm = await parent.querySelector('#commentForm') 
     console.log(variableForm)
     if (variableForm.style.display === "none") {
