@@ -41,7 +41,7 @@ router.put('/:id', async (req,res) =>{
     }
 })
 
-router.post('/', async (req,res) =>{
+router.post('/:id', async (req,res) =>{
     try{
         const createReview = await Review.create({
             ...req.body,
