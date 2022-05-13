@@ -5,8 +5,8 @@
     <div class="col-3 container">
         <p class="text-center">{{book.title}}</p>
         <img id="{{book.id}}" class="img-fluid w-100 mb-3" src="{{book.image}}" alt="">
-        <button data="{{book.id}}" id="unsaveBtn">Unsave</button>
-        <button id="reviewBtn">Review</button>
+        <button data="{{book.id}}" id="unsaveBtn" class="btn bg-custom">Unsave</button>
+        <button id="reviewBtn" class="btn bg-custom">Review</button>
     </div>
         <div class="col-9 bg-light mb-3 bolder scroll">
     <form id="commentForm" style="display: none;">
@@ -25,12 +25,12 @@
         <div id="updateBox" class="mb-3">
             <label for="updatr" class="form-label">Edit</label>
             <input name="input" type="text" class="form-control" id="updateText" aria-describedby="updateText">
-            <button data="{{rev.id}}" id="postUpdate">Post Update</button>
+            <button data="{{rev.id}}" id="postUpdate" class="btn bg-custom">Post Update</button>
         </div>
     </form>
         <p>{{rev.review}}</p>
-        <button data="{{rev.id}}" id="editBtn">edit</button>
-        <button data="{{rev.id}}" id="delBtn">delete</button>
+        <button data="{{rev.id}}" id="editBtn" class="btn bg-custom">edit</button>
+        <button data="{{rev.id}}" id="delBtn" class="btn bg-custom">delete</button>
     </div>
     {{/each}}
     </div>
