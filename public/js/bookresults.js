@@ -1,5 +1,6 @@
 const getSingleBook = (event) => {
     event.preventDefault();
+    topbar.show();
     location.href = '/api/books/result?bookid=' + event.target.id;
   };
   
