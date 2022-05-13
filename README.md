@@ -36,13 +36,13 @@ https://aqueous-plateau-74718.herokuapp.com/
 |||Node fetch|--
 
 
-| API used|            |       |
-| ------------- |:-------------:| -----:|
+| API used| 
+| ------------- |
 | [Google Book API](https://developers.google.com/books)|
 
-| Third Party Libraries|               |       |
-| ------------- |:-------------:| -----:|
-| [Boostrap](https://getbootstrap.com/)  | 
+| Third Party Libraries|
+| ------------- |
+| [Boostrap](https://getbootstrap.com/) | 
 | [Topbar](https://buunguyen.github.io/topbar/)
 
 
