@@ -57,10 +57,9 @@ const addReview = async (event) => {
     }
     return document.querySelector('#displayText').innerHTML = text;
 };
-
-
 document.querySelectorAll('#submitReview').forEach(e => e.addEventListener('click', addReview));
 
+// upvoting 
 async function upvote(event){
         event.preventDefault();
         const btn = event.target;
@@ -108,7 +107,7 @@ async function downvote(event){
 }
 document.querySelectorAll('#downvote').forEach(e => e.addEventListener('click', downvote));
 
-
+// showing edit text bar when clicking the edit button
 async function showUpdate(event){
     event.preventDefault();
     let info = event.target;
