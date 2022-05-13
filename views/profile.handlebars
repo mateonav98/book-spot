@@ -20,12 +20,15 @@
         <button id="downvote" data="{{book.id}}" type="click" class="btn bg-custom font-weight-bold">🡻</button> 
         <p id="displayText"></p>
     </form>
-    {{user.reviews.review}}
+    {{#each book.reviews as |rev|}}
+    <p>{{rev.review}}</p>
+    <button data="{{rev.id}}" id="editBtn">edit</button>
+    <button data="{{rev.id}}" id="delBtn">delete</button>
+    {{/each}}
 </div>
 {{/each}}
 {{else}}
 <a href="/login">You must save a book first to view this page</a>
 {{/if}}
-
 <script src="/js/unsaveBook.js"></script>
 <script src="/js/profile.js"></script>
