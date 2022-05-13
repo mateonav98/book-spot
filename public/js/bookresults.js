@@ -1,6 +1,8 @@
 const getSingleBook = (event) => {
     event.preventDefault();
-    topbar.show();
+
+    // when calling topbar.show() it broke the function;
+
     location.href = '/api/books/result?bookid=' + event.target.id;
   };
   
