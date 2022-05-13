@@ -1,5 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
+    topbar.show();
   
     // Collect values from the login form
     const email = document.querySelector('#inputLoginEmail').value.trim();
