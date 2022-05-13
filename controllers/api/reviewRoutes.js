@@ -16,7 +16,7 @@ router.get('/', async (req,res)=>{
 // get single route by id
 router.get('/:id', async (req,res) =>{
     try{
-        const reviewById = await Review.findByPk({
+        const reviewById = await Review.findByPk(req.params.id,{
             include: [{model: Book},{model:User}]
         })
         const review = reviewById.get({plain: true});
@@ -31,7 +31,7 @@ router.put('/:id', async (req,res) =>{
         const updateReview = Review.update(req.body, {
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id,
+                // user_id: req.session.user_id,
             }
         });
 
@@ -46,7 +46,7 @@ router.post('/', async (req,res) =>{
         const createReview = await Review.create({
             ...req.body,
             user_id: req.session.user_id,
-            logged_in: req.session.logged_in,
+            // logged_in: req.session.logged_in,
         });
         res.status(200).json(createReview)
         
