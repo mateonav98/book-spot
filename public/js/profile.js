@@ -148,7 +148,7 @@ const deleteReview = async (event) => {
     });
     console.log(response)
     if (response.ok) {
-        document.location.reload();
+        document.location.reload(true);
         console.log('DELETE SUCCESSFUL')
     } else {
         alert('DELETE NOT SUCCESSFUL')

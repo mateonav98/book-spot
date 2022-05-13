@@ -8,15 +8,11 @@ const unsaveBook = async (event) => {
     });
     console.log(response)
     if (response.ok) {
-        document.location.reload();
+        document.location.reload(true);
         console.log('UNSAVED SUCCESSFUL')
     } else {
         alert('UNSAVE NOT SUCCESSFUL')
     };
 }
-
-// document
-// .querySelector('#unsaveBtn')
-// .addEventListener('click', unsaveBook);
 
 document.querySelectorAll('#unsaveBtn').forEach(e => e.addEventListener('click', unsaveBook));

@@ -3,11 +3,6 @@ const  router  = require("express").Router();
 
 router.get('/', async (req,res) =>{
     try{
-        // const bookData = await Book.findAll({
-        //     include: [{model: Review}]
-        // })
-        // const book = bookData.map((data) => data.get({plain:true}));
-
         const searchTerm = req.query.searchTerm;
         // console.log(req);
         console.log(req.query.searchTerm);

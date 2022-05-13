@@ -31,7 +31,6 @@ router.put('/:id', async (req,res) =>{
         const updateReview = Review.update(req.body, {
             where: {
                 id: req.params.id,
-                // user_id: req.session.user_id,
             }
         });
 
@@ -46,7 +45,6 @@ router.post('/', async (req,res) =>{
         const createReview = await Review.create({
             ...req.body,
             user_id: req.session.user_id,
-            // logged_in: req.session.logged_in,
         });
         res.status(200).json(createReview)
         
